@@ -12,7 +12,6 @@ public class rotate_matrix {
         		matrix[j][i] = x;
         	}
         }
-
         int i =0, j = m-1;
         while(i<j) {
         	for(int x=0;x<n;x++) {
