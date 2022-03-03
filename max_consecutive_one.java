@@ -1,0 +1,23 @@
+package coding;
+
+public class max_consecutive_one {
+	
+	public int findMaxConsecutiveOnes(int[] nums) {
+		int cnt = 0, maxCnt = 0;
+        for(int i =0;i<nums.length;i++) {
+            if(nums[i] == 1) {
+                cnt++;
+                maxCnt = Math.max(cnt, maxCnt);
+            }else {
+                cnt = 0;
+            }
+        }
+        return maxCnt;
+    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
