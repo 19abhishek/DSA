@@ -24,13 +24,16 @@ public class n_meetings_in_one_room {
 	
 	public static int maxMeetings(int start[], int end[], int n)
     {
-		ArrayList<meeting> meet = new ArrayList<>();
+ArrayList<meeting> meet = new ArrayList<>();
         
         for(int i = 0; i < start.length; i++)
             meet.add(new meeting(start[i], end[i], i+1));
         
         meetingComparator mc = new meetingComparator(); 
         Collections.sort(meet, mc);
+        // for(meeting cm: meet) {
+        // 	System.out.println(cm.start+" "+cm.end+" "+cm.pos);
+        // }
         ArrayList<Integer> answer = new ArrayList<>();
         answer.add(meet.get(0).pos);
         int limit = meet.get(0).end; 
@@ -41,11 +44,7 @@ public class n_meetings_in_one_room {
                 answer.add(meet.get(i).pos);
             }
         }
-        System.out.println("The order in which the meetings will be performed is ");
-        for(int i = 0;i<answer.size(); i++) {
-            System.out.print(answer.get(i) + " ");
-        }
-        return 0;
+        return answer.size();
     }
 
 	public static void main(String[] args) {
