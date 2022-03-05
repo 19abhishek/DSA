@@ -15,10 +15,10 @@ public class n_meetings_in_one_room {
 	
 	static class meetingComparator implements Comparator<meeting> {
 		public int compare(meeting a, meeting b) {
-			if(a.start > b.start) {
-				return -1;
-			}
-			return 1;
+			if(a.end == b.end) {
+                return a.start - b.start;
+            }
+            return a.end - b.end;
 		}
 	}
 	
